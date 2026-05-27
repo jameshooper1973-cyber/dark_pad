@@ -1,0 +1,12 @@
+# Next.js
+.next/
+out/
+node_modules/
+.env*
+.DS_Store
+
+# Vercel
+.vercel
+
+# Debug
+npm-debug.log*
