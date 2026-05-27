@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;900&family=IM+Fell+English:ital@0;1&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #080808;
+  --bg2: #0f0f0f;
+  --bg3: #161616;
+  --bg4: #1e1e1e;
+  --border: #2a2a2a;
+  --border2: #3a3a3a;
+  --text: #d4ccbc;
+  --text2: #8a8278;
+  --accent: #8b1a1a;
+  --accent2: #c0392b;
+  --gold: #b8860b;
+  --gold2: #d4a017;
+  --glow: rgba(139, 26, 26, 0.4);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Cinzel', serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent2);
+}
+
+/* Selection */
+::selection {
+  background: rgba(139, 26, 26, 0.5);
+  color: #fff;
+}
+
+/* Buttons base */
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+/* Input base */
+input {
+  font-family: inherit;
+}
+
+/* Animations */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.8; }
+  94% { opacity: 1; }
+  96% { opacity: 0.9; }
+  97% { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes runeGlow {
+  0%, 100% { text-shadow: 0 0 10px var(--glow), 0 0 30px var(--glow); }
+  50% { text-shadow: 0 0 20px rgba(139,26,26,0.8), 0 0 60px var(--glow), 0 0 80px rgba(139,26,26,0.2); }
+}
+
+@keyframes borderPulse {
+  0%, 100% { border-color: var(--accent); }
+  50% { border-color: var(--gold); }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Editor placeholder */
+[data-placeholder]:empty::before {
+  content: attr(data-placeholder);
+  color: #2a2822;
+  pointer-events: none;
+  font-style: italic;
+}
+
+/* Toolbar button hover */
+button:hover {
+  background: rgba(139,26,26,0.2) !important;
+  color: #d4ccbc !important;
+}
+
+/* Export menu item hover */
+.exportItem:hover {
+  background: rgba(139,26,26,0.2);
+  color: #d4a017;
+}
+
+/* Note item hover */
+div[style*="border-bottom: 1px solid rgb(26, 26, 26)"]:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+/* Title input hover/focus */
+input[style*="border-bottom: 1px solid rgb(42, 42, 42)"]:hover,
+input[style*="border-bottom: 1px solid rgb(42, 42, 42)"]:focus {
+  color: #d4ccbc !important;
+  border-bottom-color: #8b1a1a !important;
+}
+
+/* Hide scrollbar in toolbar */
+div[style*="overflow-x: auto"]::-webkit-scrollbar {
+  height: 0;
+}
+
+/* Font dropdown item hover */
+div[style*="cursor: pointer"]:hover {
+  background: rgba(139,26,26,0.15) !important;
+}
+
+/* Select styling */
+select option {
+  background: #141414;
+  color: #d4ccbc;
+}
+
+/* Search input focus */
+input:focus {
+  border-color: #8b1a1a !important;
+  outline: none;
+}
+
+/* Inserted images */
+[contenteditable] img {
+  max-width: 100%;
+  cursor: default;
+}
+[contenteditable] img:hover {
+  outline: 1px solid #8b1a1a;
+}
+
+/* Links in editor */
+[contenteditable] a {
+  color: #b8860b;
+  text-decoration: underline;
+}
+
+/* Horizontal rules */
+[contenteditable] hr {
+  border: none;
+  border-top: 1px solid #2a2a2a;
+  margin: 24px 0;
+}
